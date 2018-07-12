@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "Open multiple URLs",
+  "version": "1.0",
+
+  //"default_locale":  "en",
+  "description": "Extracts URLs from an input and opens them.",
+  "icons": {
+    "16": "images/get_started16.png",
+    "32": "images/get_started32.png",
+    "48": "images/get_started48.png",
+    "128": "images/get_started128.png"
+  },
+
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/get_started16.png",
+      "32": "images/get_started32.png",
+      "48": "images/get_started48.png",
+      "128": "images/get_started128.png"
+    }
+  },
+
+  "author": "Alexander Jurk",
+
+  "incognito": "split"
+}

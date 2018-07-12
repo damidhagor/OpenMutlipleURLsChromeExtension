@@ -1,0 +1,33 @@
+#input {
+    width: 600px;
+    height: 200px;
+    resize: none;
+    overflow: auto;
+    margin: 10px 10px 10px 10px;
+}
+
+#output {
+    width: 600px;
+    height: 200px;
+    resize: none;
+    overflow: auto;
+    border: 1px;
+    border-style: solid;
+    display: none;
+}
+
+#inputLbl {
+    font-size: 14px;
+    margin: 0px 0px 0px 10px;
+}
+
+#outputLbl {
+    font-size: 14px;
+    display: none;
+}
+
+#openBtn {
+    height: auto;
+    width: auto;
+    margin: 10px 0px 0px 10px;
+}
