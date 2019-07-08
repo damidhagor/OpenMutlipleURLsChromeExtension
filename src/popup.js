@@ -31,6 +31,7 @@ function openBtnClickHandler() {
         return;
 
     urls.forEach(url => createTab(url));
+	close();
 }
 
 function getUrlsFromText(text) {
