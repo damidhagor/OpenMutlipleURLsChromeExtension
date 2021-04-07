@@ -1,7 +1,0 @@
-- Localization
-- Lazy Loading opened tabs?
-- Catch duplicates
-- Other Browsers
-- Icon
-- Hotkey
-- TypeScript

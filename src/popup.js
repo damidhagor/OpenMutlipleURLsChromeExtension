@@ -1,37 +1,24 @@
 var input = null;
-var output = null;
 var openBtn = null;
-var urls = null;
 
 document.addEventListener("DOMContentLoaded", function () {
     input = document.getElementById("input");
-    output = document.getElementById("output");
     openBtn = document.getElementById("openBtn");
 
     openBtn.addEventListener("click", openBtnClickHandler);
-    input.addEventListener("input", inputInputHandler);
     input.focus();
 });
 
-function inputInputHandler() {
-    urls = getUrlsFromText(input.value);
+document.addEventListener('keydown', (event) => {
+    console.log(event.altKey + " - " + event.key);
 
-    if (urls === null)
-        return;
-
-    let out = "";
-    for (i = 0; i < urls.length; i++)
-        out += `\n${urls[i]}`
-
-    output.innerHTML = out;
-}
+    if (!event.shiftKey && event.key == "Enter") {
+        openTabs();
+    }
+}, false);
 
 function openBtnClickHandler() {
-    if (urls === null)
-        return;
-
-    urls.forEach(url => createTab(url));
-	close();
+    openTabs();
 }
 
 function getUrlsFromText(text) {
@@ -44,6 +31,8 @@ function getUrlsFromText(text) {
     text = text.replace(urlCleanRegExp, "\n");
 
     let matched = text.match(urlRegExp);
+    if (matched === null)
+        return null;
 
     let result = [];
     for (i = 0; i < matched.length; i++) {
@@ -65,6 +54,15 @@ function getUrlFromString(string) {
     } catch (e) {
         return null;
     }
+}
+
+function openTabs() {
+    let urls = getUrlsFromText(input.value);
+    if (urls === null)
+        return;
+
+    urls.forEach(url => createTab(url));
+    close();
 }
 
 function createTab(url, active = false) {

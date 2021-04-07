@@ -1,33 +1,32 @@
+:root {
+    --background-color: #35363E;
+    --text-color: #FFFFFF;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
 #input {
-    width: 600px;
-    height: 200px;
+    width: 30em;
+    height: 15em;
     resize: none;
     overflow: auto;
     margin: 10px 10px 10px 10px;
-}
-
-#output {
-    width: 600px;
-    height: 200px;
-    resize: none;
-    overflow: auto;
-    border: 1px;
-    border-style: solid;
-    display: none;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 #inputLbl {
     font-size: 14px;
     margin: 0px 0px 0px 10px;
-}
-
-#outputLbl {
-    font-size: 14px;
-    display: none;
+    float: left;
 }
 
 #openBtn {
     height: auto;
     width: auto;
-    margin: 10px 0px 0px 10px;
+    margin: 0px 10px 0px 0px;
+    float: right;
 }
