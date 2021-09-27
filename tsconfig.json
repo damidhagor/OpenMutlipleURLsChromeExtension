@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "outDir": "extension/scripts",
+        "allowJs": true,
+        "target": "ES6",
+        "noEmitOnError": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true
+    },
+    "include": [
+        "./src/**/*"
+    ]
+}
