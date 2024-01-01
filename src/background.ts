@@ -1,38 +1,45 @@
-chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-    if (request.topic == "updateTheme") {
-        updateBrowserActionIcons();
-        sendResponse({ status: true });
-    }
-});
+{
+    importScripts("messages.js")
 
-chrome.runtime.onInstalled.addListener(initialize);
-chrome.runtime.onStartup.addListener(initialize);
+    chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
+        let result: any = false;
 
-function initialize() {
-    updateBrowserActionIcons();
-}
+        const message: Message = request;
+        if (isMessage(message)) {
+            const topic = message.topic;
+            const payload = message.payload;
 
-function updateBrowserActionIcons() {
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        console.log("Setting dark mode.");
-        chrome.browserAction.setIcon({
-            path: {
-                "128": "images/dark/icon128.png",
-                "48": "images/dark/icon48.png",
-                "32": "images/dark/icon32.png",
-                "16": "images/dark/icon16.png"
+            if (topic === MessageTopics.UpdateTheme) {
+                updateBrowserActionIcons(payload);
+                result = true;
             }
-        });
-    }
-    else {
-        console.log("Setting light mode.");
-        chrome.browserAction.setIcon({
-            path: {
-                "128": "images/icon128.png",
-                "48": "images/icon48.png",
-                "32": "images/icon32.png",
-                "16": "images/icon16.png"
-            }
-        });
+        }
+
+        sendResponse(result);
+    });
+
+    function updateBrowserActionIcons(theme: Theme) {
+        if (theme === Theme.DarkMode) {
+            console.log("Setting dark mode.");
+            chrome.action.setIcon({
+                path: {
+                    "128": "/images/dark/icon128.png",
+                    "48": "/images/dark/icon48.png",
+                    "32": "/images/dark/icon32.png",
+                    "16": "/images/dark/icon16.png"
+                }
+            });
+        }
+        else if (theme === Theme.LightMode) {
+            console.log("Setting light mode.");
+            chrome.action.setIcon({
+                path: {
+                    "128": "/images/icon128.png",
+                    "48": "/images/icon48.png",
+                    "32": "/images/icon32.png",
+                    "16": "/images/icon16.png"
+                }
+            });
+        }
     }
 }

@@ -1,0 +1,12 @@
+{
+  "name": "OpenMutlipleURLsChromeExtension",
+  "lockfileVersion": 3,
+  "requires": true,
+  "packages": {},
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@types/chrome": "^0.0.254"
+  }
+}
