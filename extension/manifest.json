@@ -1,7 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Open multiple URLs",
-  "version": "1.1",
+  "version": "1.2",
+  "author": "Alexander Jurk",
   "description": "Extracts URLs from an input and opens them.",
   "icons": {
     "128": "images/icon128.png",
@@ -18,21 +19,5 @@
       "16": "images/icon16.png"
     }
   },
-  "background": {
-    "service_worker": "scripts/background.js"
-  },
-  "content_scripts": [
-    {
-      "matches": [
-        "http://*/*",
-        "https://*/*"
-      ],
-      "js": [
-        "scripts/messages.js",
-        "scripts/content.js"
-      ]
-    }
-  ],
-  "author": "Alexander Jurk",
   "incognito": "split"
 }
