@@ -5,5 +5,5 @@ With either hitting Enter or the button the extension parses the URLs from the i
 
 ## Icon
 
-https://icons8.com/icon/83168/external-link
+https://icons.getbootstrap.com/icons/box-arrow-up-right/
 Color: #339AF0
