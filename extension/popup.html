@@ -1,14 +1,24 @@
 <html>
-<head>
-    <link rel="stylesheet" type="text/css" href="bootstrap/bootstrap.min.css" />
-    <script src="bootstrap/bootstrap.bundle.min.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="popup.css" />
-    <script src="scripts/popup.js"></script>
-</head>
+    <head>
+        <link rel="stylesheet" type="text/css" href="bootstrap/bootstrap.min.css" />
+        <script src="bootstrap/bootstrap.bundle.min.js"></script>
+        <script src="scripts/popup.js"></script>
+    </head>
 
     <body>
-        <div><span id="inputLbl">Input:</span><button id="openBtn">Open Tabs</button></div>
-        <textarea id="input"></textarea>
+        <div class="d-flex flex-column text-bg-dark gap-2 p-2"
+             style="width: 400px; height: 300px;">
+
+            <h3>Open Multiple Urls</h3>
+
+            <textarea id="input"
+                      class="form-control flex-grow-1 text-bg-dark"
+                      style="resize: none;"></textarea>
+
+            <button id="openBtn"
+                    class="btn btn-primary">
+                Open Tabs
+            </button>
+        </div>
     </body>
 </html>

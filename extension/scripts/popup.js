@@ -1,11 +1,13 @@
 var input;
 var openBtn;
+
 document.addEventListener("DOMContentLoaded", function () {
     input = document.getElementById("input");
     openBtn = document.getElementById("openBtn");
     openBtn === null || openBtn === void 0 ? void 0 : openBtn.addEventListener("click", openBtnClickHandler);
     input.focus();
 });
+
 document.addEventListener('keydown', (event) => {
     if (!event.shiftKey && event.key == "Enter") {
         openTabs();
@@ -29,6 +31,7 @@ function getUrlsFromText(text) {
     }
     return result;
 }
+
 function getUrlFromString(string) {
     try {
         let url = new URL(string);
@@ -38,6 +41,7 @@ function getUrlFromString(string) {
         return null;
     }
 }
+
 function openTabs() {
     let urls = getUrlsFromText(input.value);
     if (urls === null)
@@ -45,6 +49,7 @@ function openTabs() {
     urls.forEach(url => createTab(url));
     close();
 }
+
 function createTab(url, active = false) {
     try {
         chrome.tabs.create({
